@@ -1,0 +1,19 @@
+{
+  "name": "botinator-template",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --enable-source-maps --experimental-specifier-resolution=node --no-warnings --loader ts-node/esm src/index.ts"
+  },
+  "dependencies": {
+    "botinator": "file:../botinator",
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
