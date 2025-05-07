@@ -1,4 +1,4 @@
-import { Command, CommandBuilderTypes } from "botinator";
+import { Command, CommandBuilderTypes } from "discord-botinator";
 import ExampleBot from "../bot.js";
 import { CacheType, ChatInputCommandInteraction, GuildMember, SlashCommandBuilder, SlashCommandStringOption } from "discord.js";
 

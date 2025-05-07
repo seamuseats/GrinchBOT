@@ -1,4 +1,4 @@
-import { Bot } from "botinator";
+import { Bot } from "discord-botinator";
 import { Client, GuildMember, Message, TextChannel } from "discord.js";
 import EchoCommand from "./commands/echo.js";
 
