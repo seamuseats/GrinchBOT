@@ -1,4 +1,6 @@
 # GrinchBot
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/seamuseats/MoldAPI)
+
 
 GrinchBot is a discord bot primarily used for managing the MSSM Official List of Demons (MOLD).
 
