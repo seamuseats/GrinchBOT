@@ -1,6 +1,12 @@
-# Botinator template
+# GrinchBot
 
-(WIP)
+GrinchBot is a discord bot primarily used for managing the MSSM Official List of Demons (MOLD).
+
+So far it just talks to [my backend](https://github.com/seamuseats/MoldAPI) and the GDDL
+
+Future features hopefully soon to come!
+
+## Running Grinchbot
 
 Steps:
 
