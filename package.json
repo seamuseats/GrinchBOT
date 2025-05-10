@@ -10,10 +10,13 @@
     "start": "node --enable-source-maps --experimental-specifier-resolution=node --no-warnings --loader ts-node/esm src/index.ts"
   },
   "dependencies": {
-    "discord-botinator": "^0.2.0",
+    "discord-botinator": "^0.2.2",
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "axios": "^1.9.0"
   }
 }
