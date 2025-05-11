@@ -31,15 +31,15 @@ export default class LevelBoardCommand extends Command<GuildMember, GrinchBot> {
                 entries
             );
 
-            this.bot.log.silly(`recived ${JSON.stringify(response)} from mold API`);
+            this.bot.log.info(`recived ${JSON.stringify(response)} from mold API`);
 
             var levelBoard: APIEmbedField[] = [];
             for(var i = 0; i < entries && i < response.length; i++){
                 if(response[i].video){
-                    levelBoard.push({ name: `${response[i].place}. ${response[i].title}`, value: `${response[i].completions[0].name} [Video](${response[i].video})` });
+                    levelBoard.push({ name: `${response[i].place}. ${response[i].title}`, value: `lacking first victor support right now [Video](${response[i].video})` });
                 }
                 else{
-                    levelBoard.push({ name: `${response[i].place}. ${response[i].title}\n`, value: `${response[i].completions[0].name}` });
+                    levelBoard.push({ name: `${response[i].place}. ${response[i].title}`, value: `lacking first victor support right now` });
                 }
             }
 

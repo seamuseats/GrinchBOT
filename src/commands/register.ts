@@ -23,5 +23,6 @@ export default class RegisterCommand extends Command<GuildMember, GrinchBot> {
             uname? uname : msg.user.displayName.toString()
         );
         msg.reply(response);
+        this.bot.log.info(response);
     }
 }

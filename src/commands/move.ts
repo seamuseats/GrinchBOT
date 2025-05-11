@@ -31,6 +31,7 @@ export default class MoveCommand extends Command<GuildMember, GrinchBot> {
                 placement
             );
             msg.reply(response);
+            this.bot.log.info(response);
         }
     }
 }

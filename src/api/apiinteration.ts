@@ -106,17 +106,16 @@ export async function moldRegisterUser(discordid: string, uname?: string): Promi
         });
 }
 
-// GET methods
-
 export async function moldLevelBoard(entries: number): Promise<any>{
     console.log('fetching levelboard');
     return axios.get('/api/levelboard/', 
         {
             headers: {
                 'accept': 'application/json',
-                'n-tries': entries.toString(),
+                'entries': entries.toString()
             }
-        })
+        }
+        )
         .then(function (response) {
             console.log(response);
             const levels = JSON.parse(response.data);
