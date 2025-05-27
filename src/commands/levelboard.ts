@@ -3,7 +3,7 @@ import GrinchBot from "../bot.js";
 import { CacheType, ChatInputCommandInteraction, GuildMember, SlashCommandBuilder, SharedNameAndDescription, EmbedBuilder, APIEmbedField } from "discord.js";
 import { moldLevelBoard, moldMoveLevel } from "../api/apiinteration.js";
 
-export default class LevelBoardCommand extends Command<GuildMember, GrinchBot> {
+export default class LevelBoardCommand extends Command<GrinchBot> {
     getName(): string {
         return "levelboard"
     }
@@ -12,7 +12,7 @@ export default class LevelBoardCommand extends Command<GuildMember, GrinchBot> {
         return new SlashCommandBuilder()
             .setName(this.getName())
             .setDescription("Level Leaderboard")
-            .addNumberOption(arg => arg.setName("entries").setDescription('The number of list entries to show').setRequired(true))
+            .addNumberOption(arg => arg.setName("entries").setDescription('The number of list entries to show').setRequired(false))
             .addBooleanOption(arg => arg.setName("personal-list").setDescription('Show levels only for this user (Not implemented)').setRequired(false));
     }
 
@@ -24,6 +24,7 @@ export default class LevelBoardCommand extends Command<GuildMember, GrinchBot> {
 
         if(!entries){
             entries = 15;
+            this.bot.log.warn("No levelboard size supplied, defaulting to 15!");
         }
         
         else {

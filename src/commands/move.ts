@@ -3,7 +3,7 @@ import GrinchBot from "../bot.js";
 import { CacheType, ChatInputCommandInteraction, GuildMember, SlashCommandBuilder, SharedNameAndDescription } from "discord.js";
 import { moldMoveLevel } from "../api/apiinteration.js";
 
-export default class MoveCommand extends Command<GuildMember, GrinchBot> {
+export default class MoveCommand extends Command<GrinchBot> {
     getName(): string {
         return "move"
     }

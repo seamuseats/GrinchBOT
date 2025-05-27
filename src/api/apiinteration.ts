@@ -33,7 +33,7 @@ export async function moldPlaceLevel(levelid: number, leveltitle: string, victor
             console.log(response);
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error.message);
         });
 }
 
@@ -55,7 +55,7 @@ export async function moldCompleteLevel(levelid: number, leveltitle: string, vic
             console.log(response);
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error.message);
         });
 }
 
@@ -78,7 +78,7 @@ export async function moldMoveLevel(levelid: number, leveltitle: string, placeme
             return(response.data);
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error.message);
             return error;
         });
 }
@@ -101,7 +101,7 @@ export async function moldRegisterUser(discordid: string, uname?: string): Promi
             return(response.data);
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error.message);
             return error;
         });
 }
@@ -122,7 +122,7 @@ export async function moldLevelBoard(entries: number): Promise<any>{
             return(levels);
         })
         .catch(function (error) {
-            console.log(error);
+            console.log(error.message);
             return error;
         });
 }

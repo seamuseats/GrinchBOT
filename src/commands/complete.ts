@@ -3,7 +3,7 @@ import GrinchBot from "../bot.js";
 import { CacheType, ChatInputCommandInteraction, GuildMember, SlashCommandBuilder } from "discord.js";
 import { moldCompleteLevel } from "../api/apiinteration.js";
 
-export default class CompleteCommand extends Command<GuildMember, GrinchBot> {
+export default class CompleteCommand extends Command<GrinchBot> {
     getName(): string {
         return "complete"
     }

@@ -1,4 +1,4 @@
-import { Bot } from "discord-botinator";
+import { Bot, LOG_CONFIG } from "discord-botinator";
 import { Client, GuildMember, Message, TextChannel } from "discord.js";
 import EchoCommand from "./commands/echo.js";
 import CompleteCommand from "./commands/complete.js";
@@ -6,6 +6,15 @@ import MoveCommand from "./commands/move.js";
 import PlaceCommand from "./commands/place.js";
 import LevelBoardCommand from "./commands/levelboard.js";
 import RegisterCommand from "./commands/register.js";
+import { createStream } from "rotating-file-stream";
+
+LOG_CONFIG.DEFAULT_LOGGER.settings.name = "Grinch";
+//LOG_CONFIG.DEFAULT_LOGGER.settings.minLevel = 3;
+LOG_CONFIG.LOGGER_STREAM = createStream("bot.log", {
+    size: "100M",
+    interval: "1d",
+    path: "./logs/"
+});
 
 export default class GrinchBot extends Bot<GuildMember> { // Replace GuildMember with your custom user data class
     protected init(): void {

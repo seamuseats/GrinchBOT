@@ -3,7 +3,7 @@ import GrinchBot from "../bot.js";
 import { CacheType, ChatInputCommandInteraction, EmbedBuilder, GuildMember, SlashCommandBuilder, SlashCommandStringOption, TextChannel } from "discord.js";
 import { moldPlaceLevel } from "../api/apiinteration.js";
 
-export default class PlaceCommand extends Command<GuildMember, GrinchBot> {
+export default class PlaceCommand extends Command<GrinchBot> {
     getName(): string {
         return "place"
     }

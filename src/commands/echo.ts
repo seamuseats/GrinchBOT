@@ -2,7 +2,7 @@ import { Command, CommandBuilderTypes } from "discord-botinator";
 import GrinchBot from "../bot.js";
 import { CacheType, ChatInputCommandInteraction, GuildMember, SlashCommandBuilder, SlashCommandStringOption } from "discord.js";
 
-export default class EchoCommand extends Command<GuildMember, GrinchBot> {
+export default class EchoCommand extends Command<GrinchBot> {
     getName(): string {
         return "echo"
     }
