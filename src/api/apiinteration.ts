@@ -12,7 +12,7 @@ const axios = new Axios({
 
 // POST methods
 
-export async function moldPlaceLevel(levelid: number, leveltitle: string, victor: string, placement: number, video?: string, author?: string){
+export async function moldPlaceLevel(levelid: number, leveltitle: string, victor: string, placement: number, difficulty: string, video?: string, author?: string){
     console.log('placing level');
     await axios.post('/api/placelevel/', 
         JSON.stringify({
@@ -21,7 +21,8 @@ export async function moldPlaceLevel(levelid: number, leveltitle: string, victor
             title: leveltitle,
             placement: placement,
             video: video,
-            author: author
+            author: author,
+            difficulty: difficulty
         }), 
         {
             headers: {
