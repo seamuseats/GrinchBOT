@@ -24,27 +24,25 @@ export default class LevelBoardCommand extends Command<GrinchBot> {
 
         if(!entries){
             entries = 15;
-            this.bot.log.warn("No levelboard size supplied, defaulting to 15!");
+            this.bot.log.info("No levelboard size supplied, defaulting to 15.");
         }
         
-        else {
-            const response: any = await moldLevelBoard(
-                entries
-            );
+        const response: any = await moldLevelBoard(
+            entries
+        );
 
-            this.bot.log.info(`recived ${JSON.stringify(response)} from mold API`);
+        this.bot.log.info(`recived ${JSON.stringify(response)} from mold API`);
 
-            var levelBoard: APIEmbedField[] = [];
-            for(var i = 0; i < entries && i < response.length; i++){
-                if(response[i].video){
-                    levelBoard.push({ name: `${response[i].place}. ${response[i].title}`, value: `lacking first victor support right now [Video](${response[i].video})` });
-                }
-                else{
-                    levelBoard.push({ name: `${response[i].place}. ${response[i].title}`, value: `lacking first victor support right now` });
-                }
+        var levelBoard: APIEmbedField[] = [];
+        for(var i = 0; i < entries && i < response.length; i++){
+            if(response[i].video){
+                levelBoard.push({ name: `${response[i].place}. ${response[i].title}`, value: `[Video](${response[i].video})` });
             }
-
-            await expandAndHandleEmbed(new EmbedBuilder().setTitle('Levels Leaderboard'), levelBoard, 25, msg.editReply.bind(msg) as any);
+            else{
+                levelBoard.push({ name: `${response[i].place}. ${response[i].title}`, value: `plink` });
+            }
         }
+
+        await expandAndHandleEmbed(new EmbedBuilder().setTitle('Levels Leaderboard'), levelBoard, 25, msg.editReply.bind(msg) as any); // .editReply.bind(msg) as any);
     }
 }

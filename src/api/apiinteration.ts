@@ -112,6 +112,7 @@ export async function moldLevelBoard(entries: number): Promise<any>{
     return axios.get('/api/levelboard/', 
         {
             headers: {
+                'api-key': process.env["MOLD_API"],
                 'accept': 'application/json',
                 'entries': entries.toString()
             }
