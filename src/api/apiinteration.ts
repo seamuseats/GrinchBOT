@@ -3,7 +3,7 @@ import GrinchBot from '../bot.js';
 import { Loggable } from 'discord-botinator';
 
 const axios = new Axios({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:3001',
     headers: {
         'api-key': process.env["MOLD_API"]
     },
